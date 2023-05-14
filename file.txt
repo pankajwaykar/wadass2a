@@ -1,0 +1,4 @@
+abcd name : Pankaj
+
+git init -- to initialize the git
+git add filename/.-- to add the files in git 
