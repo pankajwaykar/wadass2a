@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Registration</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Event handler for the form submission
+      $('#registrationForm').submit(function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the form data
+        var formData = {
+          name: $('#name').val(),
+          email: $('#email').val()
+        };
+
+        // Send the data using AJAX POST request
+        $.ajax({
+          type: 'POST',
+          url: 'registration.php', // Replace with the URL to your server-side script
+          data: formData,
+          success: function(response) {
+            // Redirect to a new page with the list of data
+            window.location.href = 'data-list.html';
+          },
+          error: function(xhr, status, error) {
+            console.log(xhr.responseText);
+            alert('An error occurred while submitting the form. Please try again.');
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>User Registration</h1>
+  <form id="registrationForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>

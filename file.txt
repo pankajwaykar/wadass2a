@@ -4,6 +4,6 @@ git init -- to initialize the git
 git add filename/.-- to add the files in git 
 git status -- to get the status 
 git remote add origin "https://github.com/pankajwaykar/wadass2a.git"
-git commit -m "First commit"
+git commit -m "First commit"	
 git status
 git push -u origin master
